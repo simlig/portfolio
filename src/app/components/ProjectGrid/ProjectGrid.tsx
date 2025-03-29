@@ -7,7 +7,7 @@ const projects: Project[] = [
     imageUrl: "/VineTech/RoverInVineyard.jpg",
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
-    link: 'https://project-link-1.com',
+    link: '/VineTech',
   },
   {
     imageUrl: '/CSPhotos/1075Mobile.png',
@@ -27,8 +27,8 @@ const ProjectGrid = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12">
       {projects.map((project, index) => (
-        <Link href={project.imageUrl} key={index}>
-          <div key={index} className="flex flex-col items-center my-12 lg:my-0 bg-slate-900 border hover:border-slate-700 border-slate-900 rounded-lg p-4">
+        <Link href={project.link} key={index}>
+          <div key={index} className="flex flex-col items-center my-12 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4">
             <div>
               <img
                 src={project.imageUrl}

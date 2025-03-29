@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(27, 27, 27);
+}
+
+.jumbotron {
+    background-color: rgb(27, 27, 27);
+}
+
+#caption {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+    color: black;
+    text-align: center;
+}
+
+#sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#captionWhite {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+h3 {
+    color: white;
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h4 {
+    color: white;
+    text-align: left;
+}
+
+p {
+    color: rgb(147, 202, 142);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+}
+
+div {
+    color: white;
+}

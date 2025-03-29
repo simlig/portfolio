@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
 import Navbar from "./components/Navbar/Narbar";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-20 gap-16 bg-black">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-20 gap-16 bg-[#141e38]">
         <ProjectGrid></ProjectGrid>
       </div>
     </>
