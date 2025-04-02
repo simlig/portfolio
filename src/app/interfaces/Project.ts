@@ -3,4 +3,5 @@ interface Project {
     title: string;
     description: string;
     link: string;
+    contributions: Array<string>
 }

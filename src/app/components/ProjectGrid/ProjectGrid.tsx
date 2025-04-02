@@ -4,14 +4,20 @@ import React, { useState } from "react";
 import "@/app/interfaces/Project";
 import Link from "next/link";
 import Carousel from "../Carousel/Carousel";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons/faCircle";
+import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
+import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 
 const projects: Project[] = [
   {
     imageUrl: "/VineTech/RoverInVineyard.jpg",
-    title: "Vine Tech",
+    title: "VineTech",
     description:
       "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
     link: "/VineTech",
+    contributions: ["Autonomous-turning", "Adaptive Cruise Control", "Improved Predicted Yield"],
   },
   {
     imageUrl: "/CSPhotos/1075Mobile.png",
@@ -19,70 +25,102 @@ const projects: Project[] = [
     description:
       "A mobile application for Android and IOS for viewing customer information, driving routes and performing safety checks",
     link: "https://project-link-2.com",
+    contributions: [],
   },
-  // {
-  //   imageUrl: '/CSPhotos/1075Mobile.png',
-  //   title: 'TypeScript Programming Language Report',
-  //   description: 'A mobile application for Android and IOS for viewing customer information, driving routes and performing safety checks',
-  //   link: '/PDFs/CSIS420_Research_Paper.pdf'
-  // },
 ];
+
+
 
 const ProjectGrid = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
-  const slides = ["/VineTech/Rover_Front.png", "/VineTech/Rover_Inside.png", "/VineTech/Rover_Outside.png"]
+  const slides = [
+    "/VineTech/Rover_Front.png",
+    "/VineTech/Rover_Inside.png",
+    "/VineTech/Rover_Outside.png",
+  ];
 
   // Function to open the modal
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
 
+  function projectClicked(project: Project): void {
+    setSelectedProject(project);
+    toggleModal();
+  }
+
   return (
     <>
       <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12">
         {projects.map((project, index) => (
-          <button key={index} onClick={toggleModal}>
-            <div
-              key={index}
-              className="flex flex-col items-center  my-2 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4"
-            >
-              <div>
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="w-full h-64 object-cover object-center rounded-lg shadow-lg mb-4"
-                />
+          <div key={index}>
+            <button onClick={() => projectClicked(project)}>
+              <div className="flex flex-col items-center  my-2 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4">
+                <div>
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-64 object-cover object-center rounded-lg shadow-lg mb-4"
+                  />
+                </div>
+                <p className="text-center text-lg font-semibold">
+                  {project.title}
+                </p>
+                <p className="text-center text-gray-500">
+                  {project.description}
+                </p>
               </div>
-              <p className="text-center text-lg font-semibold">
-                {project.title}
-              </p>
-              <p className="text-center text-gray-500">{project.description}</p>
-            </div>
-          </button>
+            </button>
+            {isOpen && (
+              <div
+                className="fixed top-0 w-full h-screen bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex"
+                onClick={toggleModal} // Close on outside click
+              >
+                <div
+                  className="bg-[#1b242f] max-w-[600px] shadow-lg grid grid-cols-1  place-items-center"
+                  onClick={(e) => e.stopPropagation()} // Prevent modal closing on clicking inside
+                >
+                  <Carousel slides={slides}></Carousel>
+                  <div className="place-self-start font-bold text-4xl pt-4 px-4">
+                    {selectedProject.title}
+                  </div>
+                  <div className="m-4 text-white place-self-start">
+                    {selectedProject.contributions.map((contribution, index) => (
+                      <ul key={index} className={"font-light text-[.80rem]"}>
+                        <FontAwesomeIcon className={"pr-2"} icon={faMinus} />
+                        {contribution}
+                      </ul>
+                    ))}
+                    
+                  </div>
+                  <div className={"w-full flex justify-between items-center"}>
+                    <Link className={"place-self-start m-4"} href={"/VineTech"}>
+                      <div
+                        className={
+                          "place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem]"
+                        }
+                      >
+                        <FontAwesomeIcon
+                          className={"pr-2"}
+                          icon={faArrowUpRightFromSquare}
+                        />
+                        VIEW PROJECT
+                      </div>
+                    </Link>
+                    <div className={"place-self-center p-4"}>
+                    <button className={"hover:cursor-pointer"} onClick={toggleModal}>
+                      <FontAwesomeIcon className={"text-2xl"} icon={faXmark} />
+                    </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
-      {isOpen && (
-        <div
-          className="top-0 right-0 left-0 bottom-0 fixed inset-0 flex justify-center items-center z-50"
-          onClick={toggleModal} // Close on outside click
-        >
-          <div
-            className="bg-white max-w-[600px] rounded-lg shadow-lg grid grid-cols-1  place-items-center"
-            onClick={(e) => e.stopPropagation()} // Prevent modal closing on clicking inside
-          >
-            <Carousel slides={slides}></Carousel>
-            <button
-              onClick={toggleModal}
-              className="text-black text-2xl"
-            ></button>
-            <p className="m-4 text-black">
-              This is a modal using Tailwind CSS in a React TypeScript app.
-              Click outside or the close button to close it.
-            </p>
-          </div>
-        </div>
-      )}
     </>
   );
 };

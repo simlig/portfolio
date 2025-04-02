@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
 
 interface CarouselProps {
   slides: string[]; // Array of slide image URLs
@@ -40,13 +43,13 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           onClick={() => moveCarousel(-1)}
           className="cursor-pointer absolute top-1/2 left-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
         >
-          &lt;
+          <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <button
           onClick={() => moveCarousel(1)}
           className="cursor-pointer absolute top-1/2 right-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
         >
-          &gt;
+          <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
     </>
