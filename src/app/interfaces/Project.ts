@@ -4,4 +4,5 @@ interface Project {
     description: string;
     link: string;
     contributions: Array<string>
+    slides: Array<string>
 }

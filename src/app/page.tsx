@@ -6,28 +6,32 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-    <Navbar></Navbar>
-    <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-20 gap-16 bg-slate-900">
-      <div>
-        <div className={"text-[2.5rem] md:text-5xl font-bold md:mb-4 text-center"}>
-          Samuel K Imlig
-        </div>
-        <div className={"text-1xl font-bold text-center"}>
-          Software Engineer | Fullstack Developer
+      <Navbar></Navbar>
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-20 gap-16 bg-slate-900">
+        <div>
+          <div
+            className={
+              "text-[2.5rem] md:text-5xl font-bold md:mb-4 text-center"
+            }
+          >
+            Samuel K Imlig
+          </div>
+          <div className={"text-1xl font-bold text-center"}>
+            Software Engineer | Fullstack Developer
+          </div>
         </div>
       </div>
-    </div>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-20 gap-16 bg-[#141e38]">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-2 gap-16 bg-[#141e38]">
+        <div className={"font-bold text-5xl"}>Projects</div>
+
         <ProjectGrid></ProjectGrid>
       </div>
     </>
-
   );
 }
 
-
-
-{/* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+{
+  /* <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -121,4 +125,5 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-      </footer> */}
+      </footer> */
+}

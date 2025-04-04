@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-auto"
+                className="w-full h-auto max-h-128 object-contain"
               />
             </div>
           ))}
