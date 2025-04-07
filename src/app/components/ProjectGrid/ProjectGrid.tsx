@@ -18,6 +18,12 @@ const projects: Project[] = [
       "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
     link: "/VineTech",
     contributions: ["Autonomous-turning", "Adaptive Cruise Control", "Improved Predicted Yield"],
+    slides: [
+      "/VineTech/Rover_Front.png",
+      "/VineTech/Rover_Inside.png",
+      "/VineTech/Rover_Outside.png",
+    ]
+  
   },
   {
     imageUrl: "/CSPhotos/1075Mobile.png",
@@ -25,7 +31,12 @@ const projects: Project[] = [
     description:
       "A mobile application for Android and IOS for viewing customer information, driving routes and performing safety checks",
     link: "https://project-link-2.com",
-    contributions: [],
+    contributions: ["Mobile Development", "Database Connectivity", "GPS"],
+    slides: [
+      "/CSPhotos/1.png",
+      "/CSPhotos/3.png",
+      "/CSPhotos/10.png",
+    ]
   },
 ];
 
@@ -35,11 +46,6 @@ const ProjectGrid = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
-  const slides = [
-    "/VineTech/Rover_Front.png",
-    "/VineTech/Rover_Inside.png",
-    "/VineTech/Rover_Outside.png",
-  ];
 
   // Function to open the modal
   const toggleModal = () => {
@@ -56,7 +62,7 @@ const ProjectGrid = () => {
       <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12">
         {projects.map((project, index) => (
           <div key={index}>
-            <button onClick={() => projectClicked(project)}>
+            <button className={"cursor-pointer"} onClick={() => projectClicked(project)}>
               <div className="flex flex-col items-center  my-2 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4">
                 <div>
                   <img
@@ -76,13 +82,15 @@ const ProjectGrid = () => {
             {isOpen && (
               <div
                 className="fixed top-0 w-full h-screen bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex"
-                onClick={toggleModal} // Close on outside click
+                onClick={toggleModal}
               >
                 <div
                   className="bg-[#1b242f] max-w-[600px] shadow-lg grid grid-cols-1  place-items-center"
-                  onClick={(e) => e.stopPropagation()} // Prevent modal closing on clicking inside
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  <Carousel slides={slides}></Carousel>
+                  <div className={"bg-slate-800"}>
+                    <Carousel slides={selectedProject.slides}></Carousel>
+                  </div>
                   <div className="place-self-start font-bold text-4xl pt-4 px-4">
                     {selectedProject.title}
                   </div>

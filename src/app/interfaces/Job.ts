@@ -1,0 +1,3 @@
+interface Job {
+    header: string
+}

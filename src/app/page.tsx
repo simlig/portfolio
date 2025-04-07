@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProjectGrid from "./components/ProjectGrid/ProjectGrid";
 import Navbar from "./components/Navbar/Narbar";
 import Link from "next/link";
+import ProfessionalExperienceList from "./components/ProfessionalExperienceList/ProfessionalExperienceList";
 
 export default function Home() {
   return (
@@ -25,6 +26,8 @@ export default function Home() {
         <div className={"font-bold text-5xl"}>Projects</div>
 
         <ProjectGrid></ProjectGrid>
+        <div className={"font-bold text-5xl mt-32"}>Professional Experience</div>
+        <ProfessionalExperienceList></ProfessionalExperienceList>
       </div>
     </>
   );
