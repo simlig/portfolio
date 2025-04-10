@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-20 gap-16 bg-slate-900">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] p-8 pb-20 gap-16 bg-slate-900">
         <div>
           <div
             className={
@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-64px)] p-8 pb-2 gap-16 bg-[#141e38]">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] p-8 pb-2 gap-16 bg-[#141e38]">
         <div className={"font-bold text-5xl"}>Projects</div>
 
         <ProjectGrid></ProjectGrid>

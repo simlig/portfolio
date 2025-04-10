@@ -8,21 +8,21 @@ const projects: KeyPoints[] = [
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
     link: '/VineTech',
-    text: "98% Accuracy On Yield Predictions"
+    text: "Fix Inaccurate Bay Assignments"
   },
   {
     imageUrl: "/VineTech/grapes.svg",
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
     link: '/VineTech',
-    text: "98% Accuracy On Yield Predictions"
+    text: "Implement Adaptive Cruise Control"
   },
   {
     imageUrl: "/VineTech/grapes.svg",
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
     link: '/VineTech',
-    text: "98% Accuracy On Yield Predictions"
+    text: "Develop Autonomous Turning"
   },
   // {
   //   imageUrl: '/CSPhotos/1075Mobile.png',
