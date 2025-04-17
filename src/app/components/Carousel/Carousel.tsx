@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   return (
     <>
-      <div className="relative w-full overflow-hidden">
+      <div className="justify-center place-self-center relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -41,13 +41,13 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
         <button
           onClick={() => moveCarousel(-1)}
-          className="cursor-pointer absolute top-1/2 left-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+          className="cursor-pointer absolute top-1/2 left-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-gray-200 p-2 rounded-full"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <button
           onClick={() => moveCarousel(1)}
-          className="cursor-pointer absolute top-1/2 right-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+          className="cursor-pointer absolute top-1/2 right-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-gray-200 p-2 rounded-full"
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>

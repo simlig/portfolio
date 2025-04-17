@@ -8,7 +8,7 @@ export default function vine() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-[#141e38] text-white">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-[#141e38] text-gray-200">
         {/* <div className=" justify-items-center min-h-[calc(100vh-40px)] p-8 pb-20 gap-16 bg-slate-900"> */}
 
         <div className={"text-[2.5rem] md:text-6xl font-bold text-center "}>
@@ -73,7 +73,7 @@ export default function vine() {
           <br></br>
         </div>
       </div>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-gray-800 text-white">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-gray-800 text-gray-200">
         <h3 className={"text-4xl m-4"}>Goals</h3>
         <KeyPointGrid></KeyPointGrid>
         <div>
@@ -88,7 +88,7 @@ export default function vine() {
 
         <br></br>
       </div>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-gray-800 text-white">
+      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-gray-800 text-gray-200">
         <h3>Goal 1: Fix the inaccurate bay assignments</h3>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-4">

@@ -5,4 +5,5 @@ interface Project {
     link: string;
     contributions: Array<string>
     slides: Array<string>
+    blank: boolean
 }

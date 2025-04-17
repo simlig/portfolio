@@ -16,13 +16,15 @@ const projects: Project[] = [
     title: "VineTech",
     description:
       "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
-    link: "/VineTech",
+    // link: "/VineTech",
+    link: "/VineTech/VineTech Final Poster.pdf",
     contributions: ["Autonomous-turning", "Adaptive Cruise Control", "Improved Predicted Yield"],
     slides: [
       "/VineTech/Rover_Front.png",
       "/VineTech/Rover_Inside.png",
       "/VineTech/Rover_Outside.png",
-    ]
+    ],
+    blank: true
   
   },
   {
@@ -36,7 +38,8 @@ const projects: Project[] = [
       "/CSPhotos/1.png",
       "/CSPhotos/3.png",
       "/CSPhotos/10.png",
-    ]
+    ],
+    blank: false
   },
 ];
 
@@ -94,7 +97,7 @@ const ProjectGrid = () => {
                   <div className="place-self-start font-bold text-4xl pt-4 px-4">
                     {selectedProject.title}
                   </div>
-                  <div className="m-4 text-white place-self-start">
+                  <div className="m-4 text-gray-200 place-self-start">
                     {selectedProject.contributions.map((contribution, index) => (
                       <ul key={index} className={"font-light text-[.80rem]"}>
                         <FontAwesomeIcon className={"pr-2"} icon={faMinus} />
@@ -104,7 +107,7 @@ const ProjectGrid = () => {
                     
                   </div>
                   <div className={"w-full flex justify-between items-center"}>
-                    <Link className={"place-self-start m-4"} href={"/VineTech"}>
+                    <Link className={"place-self-start m-4"} href={selectedProject.link} target={selectedProject.blank ? "_blank" : ""}>
                       <div
                         className={
                           "place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem]"

@@ -48,7 +48,7 @@ const KeyPointGrid = () => {
               />
 
               <div className="absolute inset-0 flex justify-center items-center text-center">
-                <p className="text-white text-3xl font-bold">{project.text}</p>
+                <p className="text-gray-200 text-3xl font-bold">{project.text}</p>
               </div>
             </div> */}
               <img

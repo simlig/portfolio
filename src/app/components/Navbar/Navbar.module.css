@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @layer components {
     .links {
-        @apply text-white px-4 rounded focus:outline-none focus:ring-4 focus:ring-white border-1 border-transparent hover:border-white transition-all;
+        @apply text-gray-200 px-4 rounded focus:outline-none focus:ring-4 focus:ring-white border-1 border-transparent hover:border-white transition-all;
     }
     
 }
