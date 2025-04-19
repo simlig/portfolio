@@ -7,27 +7,29 @@ import ProfessionalExperienceList from "./components/ProfessionalExperienceList/
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] p-8 pb-20 bg-slate-900">
-        <div>
-          <div
-            className={
-              "text-[2.5rem] md:text-5xl font-bold md:mb-4 text-center"
-            }
-          >
-            Samuel K Imlig
-          </div>
-          <div className={"text-1xl font-bold text-center"}>
-            Software Engineer | Fullstack Developer
+      <div className={"text-gray-200"}>
+        <Navbar></Navbar>
+        <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] p-8 pb-20 bg-slate-900">
+          <div>
+            <div
+              className={
+                "text-[2.5rem] md:text-5xl font-bold md:mb-4 text-center"
+              }
+            >
+              Samuel K Imlig
+            </div>
+            <div className={"text-1xl font-bold text-center"}>
+              Software Engineer | Fullstack Developer
+            </div>
           </div>
         </div>
-      </div>
-      <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] p-8 pb-2 bg-[#141e38]">
-        <div className={"font-bold text-5xl mb-16"}>Projects</div>
+        <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] p-8 pb-2 bg-[#141e38]">
+          <div className={"font-bold text-5xl mb-16"}>Projects</div>
 
-        <ProjectGrid></ProjectGrid>
-        <div className={"font-bold text-5xl mt-48 mb-16"}>Professional Experience</div>
-        <ProfessionalExperienceList></ProfessionalExperienceList>
+          <ProjectGrid></ProjectGrid>
+          <div className={"font-bold text-5xl mt-48 mb-16"}>Professional Experience</div>
+          <ProfessionalExperienceList></ProfessionalExperienceList>
+        </div>
       </div>
     </>
   );

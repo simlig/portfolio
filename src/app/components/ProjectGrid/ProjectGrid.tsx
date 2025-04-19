@@ -88,7 +88,7 @@ const ProjectGrid = () => {
                 onClick={toggleModal}
               >
                 <div
-                  className="bg-[#1b242f] max-w-[600px] shadow-lg grid grid-cols-1  place-items-center"
+                  className="bg-[#1b242f] max-w-[600px] shadow-lg grid grid-cols-1 place-items-center"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className={"bg-slate-800"}>
