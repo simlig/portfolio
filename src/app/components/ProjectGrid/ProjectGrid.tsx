@@ -17,7 +17,7 @@ const projects: Project[] = [
     description:
       "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
     // link: "/VineTech",
-    link: "/VineTech/VineTech Final Poster.pdf",
+    link: "/VineTech/VineTech Final Poster.pdf#zoom=25",
     contributions: ["Autonomous-turning", "Adaptive Cruise Control", "Improved Predicted Yield"],
     slides: [
       "/portfolio/VineTech/Rover_Front.png",
