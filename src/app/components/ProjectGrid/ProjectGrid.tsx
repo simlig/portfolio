@@ -12,7 +12,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 
 const projects: Project[] = [
   {
-    imageUrl: "/VineTech/RoverInVineyard.jpg",
+    imageUrl: "/portfolio/VineTech/RoverInVineyard.jpg",
     title: "VineTech",
     description:
       "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
@@ -20,24 +20,24 @@ const projects: Project[] = [
     link: "/VineTech/VineTech Final Poster.pdf",
     contributions: ["Autonomous-turning", "Adaptive Cruise Control", "Improved Predicted Yield"],
     slides: [
-      "/VineTech/Rover_Front.png",
-      "/VineTech/Rover_Inside.png",
-      "/VineTech/Rover_Outside.png",
+      "/portfolio/VineTech/Rover_Front.png",
+      "/portfolio/VineTech/Rover_Inside.png",
+      "/portfolio/VineTech/Rover_Outside.png",
     ],
     blank: true
   
   },
   {
-    imageUrl: "/CSPhotos/1075Mobile.png",
+    imageUrl: "/portfolio/CSPhotos/1075Mobile.png",
     title: "1075 Mobile",
     description:
       "A mobile application for Android and IOS for viewing customer information, driving routes and performing safety checks",
-    link: "https://project-link-2.com",
+    link: "",
     contributions: ["Mobile Development", "Database Connectivity", "GPS"],
     slides: [
-      "/CSPhotos/1.png",
-      "/CSPhotos/3.png",
-      "/CSPhotos/10.png",
+      "/portfolio/CSPhotos/1.png",
+      "/portfolio/CSPhotos/3.png",
+      "/portfolio/CSPhotos/10.png",
     ],
     blank: false
   },

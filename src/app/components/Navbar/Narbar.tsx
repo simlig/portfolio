@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className="flex">
                     <Link href="/" className={"text-gray-200 px-4 rounded focus:outline-none focus:ring-4 focus:ring-white border-1 border-transparent hover:border-white transition-all hover:opacity-75"}>Home</Link>
                     <Link href="/PDFs/Samuel Imlig Resume.pdf" target={"_blank"} className={"text-gray-200 px-4 rounded focus:outline-none focus:ring-4 focus:ring-white border-1 border-transparent hover:border-white transition-all hover:opacity-75"}>Resume</Link>
-                    <Link href = "#" target={"_blank"} className={"text-gray-200 px-4 rounded focus:outline-none focus:ring-4 focus:ring-white border-1 border-transparent hover:border-white z-20 hover:opacity-75"}>
+                    <Link href = "https://www.linkedin.com/in/samuel-imlig/" target={"_blank"} className={"text-gray-200 px-4 rounded focus:outline-none focus:ring-4 focus:ring-white border-1 border-transparent hover:border-white z-20 hover:opacity-75"}>
                         <FontAwesomeIcon icon={faLinkedin} className={"fa-lg"} href={"https://www.linkedin.com/in/samuel-imlig/"} />
                     </Link>
                 </div>

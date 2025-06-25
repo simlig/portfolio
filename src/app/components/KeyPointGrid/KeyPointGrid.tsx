@@ -4,24 +4,24 @@ import Link from 'next/link'
 
 const projects: KeyPoints[] = [
   {
-    imageUrl: "/VineTech/grapes.svg",
+    imageUrl: "/portfolio/VineTech/grapes.svg",
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
-    link: '/VineTech',
+    link: '/portfolio/VineTech',
     text: "Fix Inaccurate Bay Assignments"
   },
   {
-    imageUrl: "/VineTech/grapes.svg",
+    imageUrl: "/portfolio/VineTech/grapes.svg",
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
-    link: '/VineTech',
+    link: '/portfolio/VineTech',
     text: "Implement Adaptive Cruise Control"
   },
   {
-    imageUrl: "/VineTech/grapes.svg",
+    imageUrl: "/portfolio/VineTech/grapes.svg",
     title: 'Vine Tech',
     description: 'Autonomous Rover that uses computer vision and machine learning to predict vineyard yields',
-    link: '/VineTech',
+    link: '/portfolio/VineTech',
     text: "Develop Autonomous Turning"
   },
   // {

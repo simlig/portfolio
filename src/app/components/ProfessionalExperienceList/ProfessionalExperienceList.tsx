@@ -19,7 +19,7 @@ const ProfessionalExperienceList = () => {
       jobCompany: "SAIC",
       jobStartDate: "2023",
       jobEndDate: "Present",
-      jobThumbnail: "/Thumbnails/SAICLogo.jpg",
+      jobThumbnail: `/portfolio/Thumbnails/SAICLogo.jpg`,
       jobThumbnailStyling: "bg-blue-700",
       jobDescription: [],
       softwareUsed: ["React", "Java", "Python", "AWS"],
@@ -31,7 +31,7 @@ const ProfessionalExperienceList = () => {
       jobCompany: "George Fox University",
       jobStartDate: "2023",
       jobEndDate: "2023",
-      jobThumbnail: "/Thumbnails/GeorgeFoxLogo.jpg",
+      jobThumbnail: "/portfolio/Thumbnails/GeorgeFoxLogo.jpg",
       jobDescription:[
         "Diagnosed and resolved software/hardware issues on Windows and macOS computers to ensure full functionality, customer satisfaction and adherence to industry standards.",
         "Enhanced efficiency by implementing automated file transfers through PowerShell scripts, reducing required employee oversight."
@@ -45,7 +45,7 @@ const ProfessionalExperienceList = () => {
       jobCompany: "Columbus Systems",
       jobStartDate: "2022",
       jobEndDate: "2022",
-      jobThumbnail: "/Thumbnails/AAP.png",
+      jobThumbnail: "/portfolio/Thumbnails/AAP.png",
       jobDescription: [
         "Developed a mobile application for iOS and Android that utilized the REST paradigm to interact with a Paradox database.",
         "Reduced pen and paper tasks by 90%, which significantly increased employee productivity and reduced redundancy."
@@ -60,7 +60,7 @@ const ProfessionalExperienceList = () => {
       jobCompany: "George Fox University",
       jobStartDate: "2021",
       jobEndDate: "2023",
-      jobThumbnail: "/Thumbnails/GeorgeFoxLogo.jpg",
+      jobThumbnail: `/portfolio/Thumbnails/GeorgeFoxLogo.jpg`,
       jobDescription: [
         "Assisted and encouraged students to reach their academic goals by teaching them core Computer " +
         "Science concepts such as data structures, analysis of algorithms, parallel programming paradigms, " +
