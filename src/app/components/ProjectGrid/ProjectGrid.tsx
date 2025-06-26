@@ -85,7 +85,7 @@ const ProjectGrid = () => {
             </button>
             {isOpen && (
               <div
-                className="fixed top-0 w-full h-screen bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex"
+                className="fixed top-0 w-full min-h-[100svh] bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex"
                 onClick={toggleModal}
               >
                 <div
