@@ -112,7 +112,6 @@ const ProfessionalExperienceList = () => {
 
                   )}
                 </div>
-                {/* <img className={"h-64 w-full"} src={"/Thumbnails/SAIC.png"}></img> */}
               </div>
             </button>
             {openListItem == index && (
@@ -137,28 +136,14 @@ const ProfessionalExperienceList = () => {
                   <div className={"text-gray-500 font-bold opacity-90"}>{job.jobLocation}</div>
                 </div>
 
-                
-                {/* <div className="grid auto-cols-min md:grid-cols-[4%_4%_auto] lg:grid-cols-[3%_3%_auto] w-full mt-4">
-                  <FontAwesomeIcon className={"fa-sm pt-1 pr-2"} icon={faArrowUpRightFromSquare} />
-                  <div className={"text-gray-500 font-bold opacity-90"}>{job.jobCompany}</div>
-                  <div></div>
-
-                  <FontAwesomeIcon className={"fa-sm pr-2 pt-1"} icon={faLocationDot} />
-                  <div className={"text-gray-500 font-bold opacity-90"}>{job.jobLocation}</div>
-                  <div></div>
-                </div> */}
-
-
-
-                <ul className={"my-4 text-sm opacity-90 list-outside list-disc pl-4"}>
-                {job.jobDescription.map((jobPoint, index) => (
-                  <li key={index}>
-                    {jobPoint}
-                  </li>
-                ))}
-
+                <ul className={"my-4 text-[.75rem] sm:text-sm opacity-90 list-outside list-disc pl-4"}>
+                  {job.jobDescription.map((jobPoint, index) => (
+                    <li key={index}>
+                      {jobPoint}
+                    </li>
+                  ))}
                 </ul>
-                <div className={"flex "}>
+                <div className={"flex flex-wrap"}>
                   {job.softwareUsed.map((software) => (
                     <button
                       key={software}

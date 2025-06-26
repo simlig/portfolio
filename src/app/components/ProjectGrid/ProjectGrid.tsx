@@ -52,6 +52,7 @@ const ProjectGrid = () => {
 
   // Function to open the modal
   const toggleModal = () => {
+    document.body.style.overflow = isOpen ? "" : "hidden";
     setIsOpen(!isOpen);
   };
 
@@ -62,7 +63,7 @@ const ProjectGrid = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto sm:p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12">
         {projects.map((project, index) => (
           <div key={index}>
             <button className={"cursor-pointer"} onClick={() => projectClicked(project)}>
@@ -110,7 +111,7 @@ const ProjectGrid = () => {
                     <Link className={"place-self-start m-4"} href={selectedProject.link} target={selectedProject.blank ? "_blank" : ""}>
                       <div
                         className={
-                          "place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem]"
+                          "place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem] hover:animate-pulse"
                         }
                       >
                         <FontAwesomeIcon
