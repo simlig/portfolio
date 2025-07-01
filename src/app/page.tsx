@@ -30,11 +30,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid-cols-1 items-center justify-items-center min-h-[calc(100vh-40px)] p-[.25rem] sm:p-8 pb-20 bg-[#141e38] gap-y-2">
+        <div className="grid-cols-1 items-center justify-items-center min-h-[calc(100vh-40px)] px-[.25rem] pt-4 sm:p-8 pb-20 bg-[#141e38] gap-0">
           <div className={"font-bold text-4xl sm:text-5xl mb-12 sm:mb-16"}>Projects</div>
           <ProjectGrid></ProjectGrid>
         </div>
-        <div className="grid-cols-1 items-center justify-items-center min-h-[calc(100vh-40px)] p-[.25rem] sm:p-8 pb-20 bg-[#172646] gap-0">
+        <div className="grid-cols-1 items-center justify-items-center min-h-[calc(100vh-40px)] px-[.25rem] pt-4 sm:p-8 pb-20 bg-[#172646] gap-0">
           <div className={"font-bold text-4xl sm:text-5xl mb-12 sm:mb-16"}>Experience</div>
           <ProfessionalExperienceList></ProfessionalExperienceList>
         </div>
