@@ -16,7 +16,6 @@ const projects: Project[] = [
     title: "VineTech",
     description:
       "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
-    // link: "/VineTech",
     link: "/VineTech/VineTech Final Poster.pdf#zoom=25",
     contributions: ["Autonomous-turning", "Adaptive Cruise Control", "Improved Predicted Yield"],
     slides: [
@@ -63,7 +62,7 @@ const ProjectGrid = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto sm:p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto sm:p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12 items-center justify-items-center">
         {projects.map((project, index) => (
           <div key={index}>
             <button className={"cursor-pointer"} onClick={() => projectClicked(project)}>
