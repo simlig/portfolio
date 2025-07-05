@@ -1,13 +1,18 @@
-import React from "react";
+"use client"
+import React, { useRef } from "react";
 import Link from "next/link";
-import Navbar from "../components/Navbar/Narbar";
+import Navbar from "../components/Navbar/Navbar";
 import KeyPointGrid from "../components/KeyPointGrid/KeyPointGrid";
 import ImageContainer from "../components/ImageContainer/ImageContainer";
 
 export default function vine() {
+
+    const landingPageAnchor = useRef<HTMLDivElement | null>(null);
+    const projectGridAnchor = useRef<HTMLDivElement | null>(null);
+    const professionalExperienceListAnchor = useRef<HTMLDivElement | null>(null);
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar landingPageAnchor={landingPageAnchor} projectGridAnchor={projectGridAnchor} professionalExperienceListAnchor={professionalExperienceListAnchor}  ></Navbar>
       <div className="grid items-center justify-items-center min-h-[calc(100vh-40px)] py-8 px-8 md:px-16 lg:px-24 lg:pb-20 gap-16 bg-[#141e38] text-gray-200">
         {/* <div className=" justify-items-center min-h-[calc(100vh-40px)] p-8 pb-20 gap-16 bg-slate-900"> */}
 
