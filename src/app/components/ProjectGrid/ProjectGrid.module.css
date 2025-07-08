@@ -1,0 +1,61 @@
+@reference "tailwindcss";
+
+.mainProjectContainer {
+    @apply max-w-7xl mx-auto sm:p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12 items-center justify-items-center;
+}
+
+.individualProjectContainer {
+    @apply flex flex-col items-center  my-2 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4;
+}
+
+.image {
+    @apply w-full h-64 object-cover object-center rounded-lg shadow-lg mb-4;
+}
+
+.projectTitle {
+    @apply text-center text-lg font-semibold;
+}
+
+.projectDescription {
+    @apply text-center text-gray-500;
+}
+
+.modalContainer {
+    @apply fixed top-0 w-full min-h-[100svh] bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex;
+}
+
+.modal {
+    @apply bg-[#1b242f] max-w-[600px] shadow-lg grid grid-cols-1 place-items-center;
+}
+
+.carousel {
+    @apply bg-slate-800;
+}
+
+.modalTitle {
+    @apply place-self-start font-bold text-4xl pt-4 px-4;
+}
+
+.contributions {
+    @apply m-4 text-gray-200 place-self-start;
+}
+
+.unorderedList {
+    @apply font-light text-[.80rem];
+}
+
+.exitContainer {
+    @apply w-full flex justify-between items-center;
+}
+
+.link {
+    @apply place-self-start m-4;
+}
+
+.viewProject {
+    @apply place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem] hover:animate-pulse;
+}
+
+.exitModal {
+    @apply place-self-center p-4;
+}

@@ -9,6 +9,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons/faCircle";
 import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
+import styles from "../ProjectGrid/ProjectGrid.module.css"
 
 const projects: Project[] = [
   {
@@ -62,55 +63,55 @@ const ProjectGrid = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto sm:p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12 items-center justify-items-center">
+      <div className={styles.mainProjectContainer}>
         {projects.map((project, index) => (
           <div key={index}>
-            <button className={"cursor-pointer"} onClick={() => projectClicked(project)}>
-              <div className="flex flex-col items-center  my-2 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4">
+            <button className={"hover:cursor-pointer"} onClick={() => projectClicked(project)}>
+              <div className={styles.individualProjectContainer}>
                 <div>
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="w-full h-64 object-cover object-center rounded-lg shadow-lg mb-4"
+                    className={styles.image}
                   />
                 </div>
-                <p className="text-center text-lg font-semibold">
+                <p className={styles.projectTitle}>
                   {project.title}
                 </p>
-                <p className="text-center text-gray-500">
+                <p className={styles.projectDescription}>
                   {project.description}
                 </p>
               </div>
             </button>
             {isOpen && (
               <div
-                className="fixed top-0 w-full min-h-[100svh] bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex"
+                className={styles.modalContainer}
                 onClick={toggleModal}
               >
                 <div
-                  className="bg-[#1b242f] max-w-[600px] shadow-lg grid grid-cols-1 place-items-center"
+                  className={styles.modal}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className={"bg-slate-800"}>
+                  <div className={styles.carousel}>
                     <Carousel slides={selectedProject.slides}></Carousel>
                   </div>
-                  <div className="place-self-start font-bold text-4xl pt-4 px-4">
+                  <div className={styles.modalTitle}>
                     {selectedProject.title}
                   </div>
-                  <div className="m-4 text-gray-200 place-self-start">
+                  <div className={styles.contributions}>
                     {selectedProject.contributions.map((contribution, index) => (
-                      <ul key={index} className={"font-light text-[.80rem]"}>
+                      <ul key={index} className={styles.unorderedList}>
                         <FontAwesomeIcon className={"pr-2"} icon={faMinus} />
                         {contribution}
                       </ul>
                     ))}
                     
                   </div>
-                  <div className={"w-full flex justify-between items-center"}>
-                    <Link className={"place-self-start m-4"} href={selectedProject.link} target={selectedProject.blank ? "_blank" : ""}>
+                  <div className={styles.exitContainer}>
+                    <Link className={styles.link} href={selectedProject.link} target={selectedProject.blank ? "_blank" : ""}>
                       <div
                         className={
-                          "place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem] hover:animate-pulse"
+                          styles.viewProject
                         }
                       >
                         <FontAwesomeIcon
@@ -120,7 +121,7 @@ const ProjectGrid = () => {
                         VIEW PROJECT
                       </div>
                     </Link>
-                    <div className={"place-self-center p-4"}>
+                    <div className={styles.exitModal}>
                     <button className={"hover:cursor-pointer"} onClick={toggleModal}>
                       <FontAwesomeIcon className={"text-2xl"} icon={faXmark} />
                     </button>

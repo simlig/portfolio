@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
+import styles from "../Carousel/Carousel.module.css"
 
 interface CarouselProps {
   slides: string[]; // Array of slide image URLs
@@ -13,7 +13,6 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
-  // Move carousel slide
   const moveCarousel = (direction: number) => {
     setCurrentSlide((prevSlide) => {
       const nextSlide = (prevSlide + direction + slides.length) % slides.length;
@@ -23,17 +22,17 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   return (
     <>
-      <div className="justify-center place-self-center relative w-full overflow-hidden">
+      <div className={styles.carouselMainContainer}>
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className={styles.carouselTransition}
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((src, index) => (
-            <div key={index} className="flex-shrink-0 w-full">
+            <div key={index} className={styles.imageContainer}>
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-auto max-h-128 object-contain"
+                className={styles.carouselImage}
               />
             </div>
           ))}
@@ -41,13 +40,13 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
         <button
           onClick={() => moveCarousel(-1)}
-          className="cursor-pointer absolute top-1/2 left-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-gray-200 p-2 rounded-full"
+          className={styles.carouselButton + " left-0 bg-opacity-50"} 
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <button
           onClick={() => moveCarousel(1)}
-          className="cursor-pointer absolute top-1/2 right-0 z-10 transform -translate-y-1/2 bg-black bg-opacity-50 text-gray-200 p-2 rounded-full"
+          className={styles.carouselButton + " right-0 bg-opacity-50"}
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>

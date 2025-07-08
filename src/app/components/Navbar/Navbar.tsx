@@ -1,9 +1,10 @@
 import { useWindowWidth } from "@/app/hooks/WidthCalculator";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faBars, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import React, { Ref, useRef, useState } from "react";
+import React, { Ref, useState } from "react";
+import styles from "../Navbar/Navbar.module.css";
 
 type NavbarTypes = {
   landingPageAnchor: Ref<HTMLDivElement | null>;
@@ -16,7 +17,7 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
   const [hamburgerListActive, setHamburgerListActive] = useState<boolean>(false);
 
   function handleScroll(ref: any) {
-    const navbarHeight = 60; // Adjust this to your navbar height in px
+    const navbarHeight = 60;
     if (ref.current) {
       const elementTop = ref.current.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
@@ -27,15 +28,13 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
   }
 
   return (
-    <nav className="bg-blue-700 p-2 sticky top-0 z-10 border-b-1 border-b-gray-500">
-      <div className="mx-auto flex items-center justify-between">
+    <nav className={styles.navBar}>
+      <div className={styles.navBarFlexContainer}>
         <div className="flex">
           <button
             onClick={() => handleScroll(landingPageAnchor)}
             className={
-              "text-gray-200 rounded focus:outline-none focus:border-white border-1 border-transparent hover:border-white transition-all hover:opacity-75 hover:cursor-pointer" +
-              (width && width < 360 ? " px-2" : "") +
-              (width && width >= 360 ? " px-4" : "")
+              styles.portfolioAnchors + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
             }
           >
             Home
@@ -43,9 +42,7 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
           <button
             onClick={() => handleScroll(projectGridAnchor)}
             className={
-              "text-gray-200 rounded focus:outline-none focus:border-white border-1 border-transparent hover:border-white transition-all hover:opacity-75 hover:cursor-pointer" +
-              (width && width < 360 ? " px-2" : "") +
-              (width && width >= 360 ? " px-4" : "")
+              styles.portfolioAnchors + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
             }
           >
             Projects
@@ -53,57 +50,36 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
           <button
             onClick={() => handleScroll(professionalExperienceListAnchor)}
             className={
-              "text-gray-200 rounded focus:outline-none focus:border-white border-1 border-transparent hover:border-white transition-all hover:opacity-75 hover:cursor-pointer" +
-              (width && width < 360 ? " px-2" : "") +
-              (width && width >= 360 ? " px-4" : "")
+              styles.portfolioAnchors + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
             }
           >
             Experience
           </button>
           {width && width > 450 && (
             <>
-              <Link
-                href="/PDFs/Samuel Imlig Resume.pdf"
-                target={"_blank"}
-                className={
-                  "text-gray-200 px-4 rounded focus:outline-none focus:border-white focus:ring-white border-1 border-transparent hover:border-white transition-all hover:opacity-75"
-                }
-              >
+              <Link href="/PDFs/Samuel Imlig Resume.pdf" target={"_blank"} className={styles.links}>
                 Resume
               </Link>
-              <Link
-                href="https://www.linkedin.com/in/samuel-imlig/"
-                target={"_blank"}
-                className={
-                  "text-gray-200 px-4 rounded focus:outline-none focus:border-white focus:ring-white border-1 border-transparent hover:border-white z-20 hover:opacity-75"
-                }
-              >
+              <Link href="https://www.linkedin.com/in/samuel-imlig/" target={"_blank"} className={styles.links}>
                 <FontAwesomeIcon icon={faLinkedin} className={"fa-lg"} href={"https://www.linkedin.com/in/samuel-imlig/"} />
               </Link>
             </>
           )}
           {width && width <= 450 && (
-            <button
-              className={
-                "text-gray-200 px-4 rounded cursor-pointer focus:outline-none focus:border-white focus:ring-white border-1 border-transparent hover:border-white z-20 hover:opacity-75"
-              }
-              onClick={() => setHamburgerListActive(!hamburgerListActive)}
-            >
-              <FontAwesomeIcon icon={faBars} className={"fa-lg"}/>
+            <button className={styles.links} onClick={() => setHamburgerListActive(!hamburgerListActive)}>
+              <FontAwesomeIcon icon={faBars} className={"fa-lg"} />
             </button>
           )}
         </div>
       </div>
       {hamburgerListActive && width && width < 450 && (
-        <div className="mx-auto flex items-center justify-between">
+        <div className={styles.hamburgerContainer}>
           <div className="flex">
             <Link
               href="/PDFs/Samuel Imlig Resume.pdf"
               target={"_blank"}
               className={
-                "text-gray-200 mt-2 rounded focus:outline-none focus:border-white focus:ring-white border-1 border-transparent hover:border-white transition-all hover:opacity-75" +
-              (width && width < 360 ? " px-2" : "") +
-              (width && width >= 360 ? " px-4" : "")
+                styles.hamburgerLinks + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
               }
             >
               Resume
@@ -112,9 +88,7 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
               href="https://www.linkedin.com/in/samuel-imlig/"
               target={"_blank"}
               className={
-                "text-gray-200 mt-2 rounded focus:outline-none focus:border-white focus:ring-white border-1 border-transparent hover:border-white z-20 hover:opacity-75" +
-              (width && width < 360 ? " px-2" : "") +
-              (width && width >= 360 ? " px-4" : "")
+                styles.hamburgerLinks + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
               }
             >
               <FontAwesomeIcon icon={faLinkedin} className={"fa-lg"} href={"https://www.linkedin.com/in/samuel-imlig/"} />

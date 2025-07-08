@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+.carouselMainContainer {
+    @apply justify-center place-self-center relative w-full overflow-hidden;
+}
+
+.carouselTransition {
+    @apply flex transition-transform duration-500 ease-in-out;
+}
+
+.carouselButton {
+    @apply cursor-pointer absolute top-1/2 z-10 transform -translate-y-1/2 bg-black text-gray-200 p-2 rounded-full;
+}
+
+.carouselImage {
+    @apply w-full h-auto max-h-128 object-contain;
+}
+
+.imageContainer {
+    @apply flex-shrink-0 w-full;
+}

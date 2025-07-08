@@ -1,0 +1,85 @@
+@reference "tailwindcss";
+
+.mainContainer {
+  @apply max-w-7xl mx-auto sm:p-6 grid grid-cols-1 lg:grid-cols-2 sm:gap-8 md:gap-12 justify-items-center;
+}
+
+.symetricalJobContainer {
+  @apply w-full bg-slate-900  border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4 my-2 lg:my-0;
+}
+
+.outerJobContainer {
+  @apply flex flex-col items-center;
+}
+
+.innerJobContainer {
+  @apply font-bold p-4 mt-4 bg-slate-900 w-full;
+}
+
+.imageContainer {
+  @apply self-start w-24 h-24 rounded-full overflow-hidden bg-white will-change-transform border;
+}
+
+.image {
+  @apply w-full h-full object-cover;
+}
+
+.titleContainer {
+  @apply place-self-center flex-1;
+}
+
+.jobTitle {
+  @apply pl-8 text-[1rem] sm:text-base font-extrabold;
+}
+
+.jobLink {
+  @apply flex text-left;
+}
+
+.company {
+  @apply pl-8 text-[1rem] sm:text-base;
+}
+
+.externalLinkArrow {
+  @apply pt-[.3rem] pl-2;
+}
+
+.flexTextLeft {
+    @apply flex text-left;
+}
+
+.dynamicIcons {
+    @apply pt-1 pr-2 pl-[.2rem];
+}
+
+.jobTitleSmall {
+    @apply text-gray-300 font-extrabold;
+}
+
+.companySmall {
+    @apply text-gray-500 font-bold opacity-90;
+}
+
+.timeLine {
+    @apply pt-1 pr-2 pl-[.10rem];
+}
+
+.staticIconInformation {
+    @apply text-gray-500 font-bold opacity-90;
+}
+
+.minusIcon {
+    @apply px-2 align-middle self-center text-gray-500 opacity-90;
+}
+
+.locationIcon {
+    @apply pr-3 pt-1 pl-[.3rem];
+}
+
+.jobDescriptionList {
+    @apply my-4 text-left text-[.75rem] sm:text-sm opacity-90 list-outside list-disc pl-4;
+}
+
+.softwareContainer {
+    @apply text-sm my-2 mr-2 px-2 py-1 rounded-4xl border bg-blue-600 opacity-95;
+}
