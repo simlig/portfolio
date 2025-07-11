@@ -13,5 +13,5 @@
 }
 
 .headers {
-    @apply font-bold text-4xl sm:text-5xl mb-12 sm:mb-16;
+    @apply font-bold text-4xl sm:text-5xl mb-12 sm:mb-16 text-center;
 }
