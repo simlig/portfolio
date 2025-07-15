@@ -17,15 +17,15 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   const openImage = () => {
     if (slides.length !== 0) {
       setIsExpanded(true);
-      window.history.pushState({ modalOpen: true }, "Image Open"); 
+      window.history.pushState({ modalOpen: true }, "Image Open");
     }
   };
 
   const closeImage = () => {
-    setIsExpanded(false);
-    if (window.history.state?.modalOpen) {
-      window.history.back();
-    }
+      setIsExpanded(false);
+      if (window.history.state?.modalOpen) {
+        window.history.back();
+      }
   };
 
   useEffect(() => {
@@ -76,7 +76,12 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
         </button>
       </div>
       {isExpanded && slides.length > 0 && (
-        <div className={styles.imageExpandedContainer} onClick={closeImage}>
+        <div
+          className={`${styles.imageExpandedContainer} + ${
+            isExpanded ? "bg-black bg-opacity-80" : "bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:0]"
+          }`}
+          onClick={closeImage}
+        >
           <img
             src={slides[currentSlide]}
             alt={`${currentSlide} Slide`}
