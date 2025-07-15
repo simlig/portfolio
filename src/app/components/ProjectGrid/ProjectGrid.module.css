@@ -44,7 +44,7 @@
     @apply font-light text-[.80rem];
 }
 
-.exitContainer {
+.viewProjectContainer {
     @apply w-full flex justify-between items-center;
 }
 
@@ -56,6 +56,6 @@
     @apply place-self-start px-4 py-2 border-2 border-red-400 text-[.80rem] hover:animate-pulse;
 }
 
-.exitModal {
-    @apply place-self-center p-4;
+.exitModalContainer {
+    @apply flex w-full py-2 px-4;
 }

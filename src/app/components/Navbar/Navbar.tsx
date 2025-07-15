@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
           </button>
           {width && width > 450 && (
             <>
-              <Link href="/PDFs/Samuel Imlig Resume.pdf" target={"_blank"} className={styles.links}>
+              <Link href="/PDFs/Samuel Imlig Resume.pdf#zoom=80" target={"_blank"} className={styles.links}>
                 Resume
               </Link>
               <Link href="https://www.linkedin.com/in/samuel-imlig/" target={"_blank"} className={styles.links}>

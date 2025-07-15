@@ -13,9 +13,17 @@
 }
 
 .carouselImage {
-    @apply w-full h-auto max-h-128 object-contain;
+    @apply w-full h-auto max-h-128 object-contain cursor-pointer;
 }
 
 .imageContainer {
     @apply flex-shrink-0 w-full;
+}
+
+.imageExpandedContainer {
+    @apply fixed inset-0 flex justify-center items-center z-50 transition-opacity;
+}
+
+.expandedImage {
+    @apply transform transition-transform ease-in-out max-w-full max-h-full;
 }
