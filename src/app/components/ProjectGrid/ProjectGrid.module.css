@@ -57,5 +57,5 @@
 }
 
 .exitModalContainer {
-    @apply flex w-full py-2 px-4;
+    @apply flex w-full py-2 px-4 bg-[#1b242f];
 }

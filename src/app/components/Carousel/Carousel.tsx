@@ -13,19 +13,23 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number>(0);
 
   const openImage = () => {
-    if (slides.length !== 0) {
-      setIsExpanded(true);
-      window.history.pushState({ modalOpen: true }, "Image Open");
-    }
+    if (slides.length === 0) return;
+    setIsExpanded(true);
+    window.history.pushState({ modalOpen: true }, "Image Open");
+
+    setTimeout(() => setIsVisible(true), 10);
   };
 
   const closeImage = () => {
-      setIsExpanded(false);
-      if (window.history.state?.modalOpen) {
-        window.history.back();
-      }
+    setIsVisible(false);
+    setIsExpanded(false);
+    if (window.history.state?.modalOpen) {
+      window.history.back();
+    }
   };
 
   useEffect(() => {
@@ -41,8 +45,14 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (isExpanded && (e.key === "Backspace" || e.key === "Escape")) {
+      if ((e.key === "Backspace" && isExpanded) || (e.key === "Escape" && isExpanded)) {
         closeImage();
+        e.preventDefault();
+      } else if (e.key === "ArrowRight") {
+        moveCarousel(1);
+        e.preventDefault();
+      } else if (e.key === "ArrowLeft") {
+        moveCarousel(-1);
         e.preventDefault();
       }
     };
@@ -57,13 +67,35 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
     });
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const distance = touchStartX - touchEndX;
+
+    if (distance > 50 && currentSlide < slides.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    } else if (distance < -50 && currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+
+    setTouchStartX(0);
+  };
   return (
     <>
       <div className={styles.carouselMainContainer}>
-        <div className={styles.carouselTransition} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+        <div
+          className={styles.carouselTransition}
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {slides.map((src, index) => (
             <div key={index} className={styles.imageContainer}>
-              <img src={src} alt={`Slide ${index + 1}`} className={styles.carouselImage} onClick={openImage} />
+              <img src={src} alt={`Slide ${currentSlide}`} className={styles.carouselImage} onClick={openImage} />
             </div>
           ))}
         </div>
@@ -77,17 +109,39 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
       </div>
       {isExpanded && slides.length > 0 && (
         <div
-          className={`${styles.imageExpandedContainer} + ${
-            isExpanded ? "bg-black bg-opacity-80" : "bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:0]"
+          className={`fixed inset-0 flex justify-center items-center z-50 transition-opacity duration-300 ${
+            isVisible ? "bg-black bg-opacity-80" : "bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:0]"
           }`}
           onClick={closeImage}
         >
           <img
             src={slides[currentSlide]}
-            alt={`${currentSlide} Slide`}
-            className={styles.expandedImage}
+            alt={`Slide ${currentSlide}`}
+            className={`transform transition-transform duration-500 ease-in-out max-w-full max-h-full ${
+              isVisible ? "scale-100" : "scale-1"
+            }`}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             onClick={(e) => e.stopPropagation()}
           />
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              moveCarousel(-1);
+            }}
+            className={styles.carouselButton + " left-0 bg-opacity-50"}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              moveCarousel(1);
+            }}
+            className={styles.carouselButton + " right-0 bg-opacity-50"}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
         </div>
       )}
     </>

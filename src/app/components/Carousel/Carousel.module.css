@@ -27,3 +27,7 @@
 .expandedImage {
     @apply transform transition-transform ease-in-out max-w-full max-h-full;
 }
+
+.carouselText {
+    @apply cursor-pointer absolute right-1/2 bottom-0 z-10 transform translate-x-1/2 bg-black text-gray-200 p-2 rounded-full;
+}
