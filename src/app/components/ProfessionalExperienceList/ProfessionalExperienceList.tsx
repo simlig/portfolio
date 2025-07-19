@@ -19,7 +19,12 @@ const jobs: Job[] = [
     jobEndDate: "Present",
     jobThumbnail: `/portfolio/Thumbnails/SAICLogo.jpg`,
     jobThumbnailStyling: "bg-blue-700",
-    jobDescription: [],
+    jobDescription: [
+      "Provided full-stack development and support for an application with over 10,000 daily users",
+      "Worked as a three-person team to perform a platform upgrade that involved package update and replacement, a complete frontend rewrite and regression testing to ensure full-functionality, performance and enhanced security",
+      "Developed a full-stack application that provided content managers with the ability to query, modify and perform metrics on content and users across 800,000 unique entries",
+      "Led client meetings and provided technical insight for new development and issues detected"
+    ],
     softwareUsed: ["React", "Java", "Python", "AWS"],
   },
   {
@@ -61,10 +66,10 @@ const jobs: Job[] = [
     jobThumbnail: `/portfolio/Thumbnails/GeorgeFoxLogo.jpg`,
     jobDescription: [
       "Assisted and encouraged students to reach their academic goals by teaching them core Computer " +
-        "Science concepts such as data structures, analysis of algorithms, parallel programming paradigms, " +
-        "relational databases, and programming style best practices.",
+      "Science concepts such as data structures, analysis of algorithms, parallel programming paradigms, " +
+      "relational databases, and programming style best practices.",
       "Consoled students when they fell short of academic goals and collaborated with them to develop a " +
-        "course plan, better study habits and increased career preparedness.",
+      "course plan, better study habits and increased career preparedness.",
     ],
     softwareUsed: ["Python", "Java", "Scala", "C", "C++", "SQL", "CUDA"],
   },
