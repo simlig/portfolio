@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Navbar from "../Navbar/Navbar";
 import ProfessionalExperienceList from "../ProfessionalExperienceList/ProfessionalExperienceList";
 import ProjectGrid from "../ProjectGrid/ProjectGrid";
-import SlowRevealList from "../SlowRevealList";
+import SlowRevealList from "../SlowRevealList/SlowRevealList";
 import styles from "../MainPageComponent/MainPageComponent.module.css"
 
 const MainPageComponent = () => {

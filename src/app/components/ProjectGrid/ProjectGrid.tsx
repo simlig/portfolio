@@ -10,6 +10,7 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 import styles from "../ProjectGrid/ProjectGrid.module.css";
+import Pandemic2020Logo from "../Pandemic2020Logo/Pandemic2020Logo";
 
 const projects: Project[] = [
   {
@@ -35,6 +36,20 @@ const projects: Project[] = [
     slides: ["/portfolio/CSPhotos/1.png", "/portfolio/CSPhotos/3.png", "/portfolio/CSPhotos/10.png"],
     blank: false,
   },
+    {
+    imageUrl: "/portfolio/Pandemic2020/Logos.png",
+    title: "Pandemic 2020",
+    description: "Pandemic 2020 was a Requirements Specification Document that was designed to reduce the spread of COVID-19 by developing an early warning system through the use of contact tracing, daily checkups and regulation notifications",
+    link: "/PDFs/Pandemic2020.pdf",
+    contributions: ["Project Planning", "Requirements Engineering", "UI/UX Design"],
+    slides: [
+      "/portfolio/Pandemic2020/Welcome.png",
+      "/portfolio/Pandemic2020/Symptoms.png",
+      "/portfolio/Pandemic2020/Options_Stats_Info.png",
+      "/portfolio/Pandemic2020/Notifications_Options.png",
+    ],
+    blank: true,
+  },
 ];
 
 const ProjectGrid = () => {
@@ -49,6 +64,17 @@ const ProjectGrid = () => {
       });
     });
   }, []);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.key === "Backspace" && isOpen) || (e.key === "Escape" && isOpen)) {
+        setIsOpen(!isOpen);
+        e.preventDefault();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
 
   // Function to open the modal
   const toggleModal = () => {
@@ -69,7 +95,15 @@ const ProjectGrid = () => {
             <button className={"hover:cursor-pointer"} onClick={() => projectClicked(project)}>
               <div className={styles.individualProjectContainer}>
                 <div>
+                {project.title.includes("Pandemic") && (
+                  <div className={styles.image + " bg-black flex justify-center items-center"}>
+                  <Pandemic2020Logo></Pandemic2020Logo>
+
+                  </div>
+                )}
+                {!project.title.includes("Pandemic") && (
                   <img src={project.imageUrl} alt={project.title} className={styles.image} />
+                )}
                 </div>
                 <p className={styles.projectTitle}>{project.title}</p>
                 <p className={styles.projectDescription}>{project.description}</p>
