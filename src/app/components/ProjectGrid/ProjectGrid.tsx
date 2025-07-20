@@ -39,7 +39,7 @@ const projects: Project[] = [
     {
     imageUrl: "/portfolio/Pandemic2020/Logos.png",
     title: "Pandemic 2020",
-    description: "Pandemic 2020 was a Requirements Specification Document that was designed to reduce the spread of COVID-19 by developing an early warning system through the use of contact tracing, daily checkups and regulation notifications",
+    description: "A Requirements Specification Document that was designed to reduce the spread of COVID-19 by developing an early warning system through the use of contact tracing, daily checkups and regulation notifications",
     link: "/PDFs/Pandemic2020.pdf",
     contributions: ["Project Planning", "Requirements Engineering", "UI/UX Design"],
     slides: [
