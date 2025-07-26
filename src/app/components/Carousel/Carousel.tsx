@@ -76,10 +76,10 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
     const touchEndX = e.changedTouches[0].clientX;
     const distance = touchStartX - touchEndX;
 
-    if (distance > 50 && currentSlide < slides.length - 1) {
-      setCurrentSlide(currentSlide + 1);
-    } else if (distance < -50 && currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
+    if (distance > 50) {
+      moveCarousel(1);
+    } else if (distance < -50) {
+      moveCarousel(-1);
     }
 
     setTouchStartX(0);

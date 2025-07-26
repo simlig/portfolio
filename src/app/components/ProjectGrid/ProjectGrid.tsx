@@ -27,19 +27,31 @@ const projects: Project[] = [
     blank: true,
   },
   {
-    imageUrl: "/portfolio/CSPhotos/1075Mobile.png",
+    imageUrl: "/portfolio/1075Mobile/1075Mobile.png",
     title: "1075 Mobile",
     description:
       "A mobile application for Android and IOS for viewing customer information, driving routes and performing safety checks",
-    link: "",
+    link: "https://www.amazon.com/Columbus-Systems-1075-Mobile/dp/B0B8FTX49R/ref=sr_1_1?s=mobile-apps&sr=1-1",
     contributions: ["Mobile Development", "Database Connectivity", "GPS"],
-    slides: ["/portfolio/CSPhotos/1.png", "/portfolio/CSPhotos/3.png", "/portfolio/CSPhotos/10.png"],
-    blank: false,
+    slides: [
+      "/portfolio/1075Mobile/MainLoginPage.png",
+      "/portfolio/1075Mobile/ConfigurePage.png",
+      "/portfolio/1075Mobile/BufferingPage.png",
+      "/portfolio/1075Mobile/OptionsPage.png",
+      "/portfolio/1075Mobile/CustomerCreation.png",
+      "/portfolio/1075Mobile/CustomerCreated.png",
+      "/portfolio/1075Mobile/CustomerCreation.png",
+      "/portfolio/1075Mobile/MainCustomerPage.png",
+      "/portfolio/1075Mobile/TankInfo.png",
+      "/portfolio/1075Mobile/Navigation.png",
+    ],
+    blank: true,
   },
-    {
+  {
     imageUrl: "/portfolio/Pandemic2020/Logos.png",
     title: "Pandemic 2020",
-    description: "A Requirements Specification Document that was designed to reduce the spread of COVID-19 by developing an early warning system through the use of contact tracing, daily checkups and regulation notifications",
+    description:
+      "A Requirements Specification Document that was designed to reduce the spread of COVID-19 by developing an early warning system through the use of contact tracing, daily checkups and regulation notifications",
     link: "/PDFs/Pandemic2020.pdf",
     contributions: ["Project Planning", "Requirements Engineering", "UI/UX Design"],
     slides: [
@@ -95,15 +107,14 @@ const ProjectGrid = () => {
             <button className={"hover:cursor-pointer"} onClick={() => projectClicked(project)}>
               <div className={styles.individualProjectContainer}>
                 <div>
-                {project.title.includes("Pandemic") && (
-                  <div className={styles.image + " bg-black flex justify-center items-center"}>
-                  <Pandemic2020Logo></Pandemic2020Logo>
-
-                  </div>
-                )}
-                {!project.title.includes("Pandemic") && (
-                  <img src={project.imageUrl} alt={project.title} className={styles.image} />
-                )}
+                  {project.title.includes("Pandemic") && (
+                    <div className={styles.image + " bg-black flex justify-center items-center"}>
+                      <Pandemic2020Logo></Pandemic2020Logo>
+                    </div>
+                  )}
+                  {!project.title.includes("Pandemic") && (
+                    <img src={project.imageUrl} alt={project.title} className={styles.image} />
+                  )}
                 </div>
                 <p className={styles.projectTitle}>{project.title}</p>
                 <p className={styles.projectDescription}>{project.description}</p>
