@@ -21,7 +21,7 @@
 }
 
 .modalContainer {
-    @apply fixed top-0 w-full min-h-[100svh] bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%] inset-0 justify-center items-center z-50 overflow-auto flex;
+  @apply fixed w-full min-h-[100svh] bg-neutral-700/[var(--bg-opacity)] [--bg-opacity:50%]  inset-0 justify-center items-start [@media(min-height:760px)]:items-center z-50 overflow-y-auto  flex;
 }
 
 .modal {
