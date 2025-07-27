@@ -17,7 +17,7 @@
 }
 
 .imageContainer {
-  @apply self-start w-24 h-24 rounded-full overflow-hidden bg-white will-change-transform border;
+  @apply self-start w-24 h-24 rounded-full overflow-hidden bg-white will-change-transform;
 }
 
 .image {
