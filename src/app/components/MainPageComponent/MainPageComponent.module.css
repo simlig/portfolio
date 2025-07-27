@@ -28,6 +28,10 @@
   @apply fixed top-0 left-0 w-full h-full -z-10 opacity-10 bg-[length:200%_200%] blur-[40px];
 }
 
+.copyright {
+  @apply p-4 text-center text-xs sm:text-sm font-sans bg-[#121d38];
+}
+
 
 @keyframes swirl {
   0% {

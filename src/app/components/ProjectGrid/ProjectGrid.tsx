@@ -30,7 +30,7 @@ const projects: Project[] = [
     imageUrl: "/portfolio/1075Mobile/1075Mobile.png",
     title: "1075 Mobile",
     description:
-      "A mobile application for Android and IOS for viewing customer information, driving routes and performing safety checks",
+      "A mobile application for Android and IOS designed to assist propane drivers and servicemen. It provides customer addition and modification, tank information, driving routes, and safety check functionality",
     link: "https://www.amazon.com/Columbus-Systems-1075-Mobile/dp/B0B8FTX49R/ref=sr_1_1?s=mobile-apps&sr=1-1",
     contributions: ["Mobile Development", "Database Connectivity", "GPS"],
     slides: [
