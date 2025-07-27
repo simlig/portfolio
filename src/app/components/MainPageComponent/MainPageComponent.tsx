@@ -19,6 +19,7 @@ const MainPageComponent = () => {
         projectGridAnchor={projectGridAnchor}
         professionalExperienceListAnchor={professionalExperienceListAnchor}
       ></Navbar>
+      <div className={styles.animatedBackground} />
 
       <div className={styles.landingPage}>
         <div>
@@ -26,6 +27,7 @@ const MainPageComponent = () => {
           <SlowRevealList contentArray={["Software Engineer", "Fullstack Developer"]} interval={1200}></SlowRevealList>
         </div>
       </div>
+      <div className={styles.landingPageTransition} />
       <div className={styles.fullScreenView + " bg-[#141e38]"}>
         <div ref={projectGridAnchor} className={styles.headers}>
           Projects
