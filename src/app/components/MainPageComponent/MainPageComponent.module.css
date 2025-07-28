@@ -21,7 +21,7 @@
 }
 
 .animatedBackground {
-  background: radial-gradient(circle at 20% 20%, #ff6ec4, transparent 40%),
+  background: radial-gradient(circle at 20% 20%, #ff0122, transparent 40%),
     radial-gradient(circle at 80% 30%, #7873f5, transparent 40%),
     radial-gradient(circle at 50% 80%, #48c6ef, transparent 40%);
   animation: swirl 15s ease-in-out infinite;
