@@ -17,7 +17,7 @@
 }
 
 .projectDescription {
-    @apply text-center text-gray-500;
+    @apply text-center text-gray-500 text-sm md:text-base;
 }
 
 .modalContainer {
