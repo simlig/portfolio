@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+.links {
+  @apply hover:text-white transition;
+}
+
+.footer {
+    @apply bg-gray-900 text-gray-400 py-6;
+}
+
+.mainContainer {
+    @apply container mx-auto px-4 flex flex-col items-center space-y-4;
+}
+
+.flexBox {
+    @apply flex space-x-6;
+}
+
+.copyright {
+    @apply text-sm text-gray-500;
+}

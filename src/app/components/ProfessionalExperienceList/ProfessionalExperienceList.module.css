@@ -83,3 +83,7 @@
 .softwareContainer {
     @apply text-sm my-2 mr-2 px-2 py-1 rounded-4xl border bg-blue-600 opacity-95;
 }
+
+.fullResume {
+  @apply mt-8 sm:mt-0 font-bold text-sm sm:text-base hover:scale-105 duration-300 bg-blue-600 text-gray-200 px-5 py-2.5 rounded-md border border-transparent hover:border-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white col-span-1 lg:col-span-2;
+}

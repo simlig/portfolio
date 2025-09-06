@@ -5,9 +5,10 @@ import "@/app/interfaces/Job";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
-import { faLocationDot, faTimeline, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faSquareArrowUpRight, faTimeline, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "@/app/hooks/WidthCalculator";
 import styles from "../ProfessionalExperienceList/ProfessionalExperienceList.module.css";
+import Link from "next/link";
 
 const jobs: Job[] = [
   {
@@ -66,10 +67,10 @@ const jobs: Job[] = [
     jobThumbnail: `/portfolio/Thumbnails/GeorgeFoxLogo.jpg`,
     jobDescription: [
       "Assisted and encouraged students to reach their academic goals by teaching them core Computer " +
-      "Science concepts such as data structures, analysis of algorithms, parallel programming paradigms, " +
-      "relational databases, and programming style best practices.",
+        "Science concepts such as data structures, analysis of algorithms, parallel programming paradigms, " +
+        "relational databases, and programming style best practices.",
       "Consoled students when they fell short of academic goals and collaborated with them to develop a " +
-      "course plan, better study habits and increased career preparedness.",
+        "course plan, better study habits and increased career preparedness.",
     ],
     softwareUsed: ["Python", "Java", "Scala", "C", "C++", "SQL", "CUDA"],
   },
@@ -96,9 +97,7 @@ const ProfessionalExperienceList = () => {
             <div className={styles.outerJobContainer}>
               <div className={styles.innerJobContainer}>
                 <div className={"flex"}>
-                  <div
-                    className={styles.imageContainer}
-                  >
+                  <div className={styles.imageContainer}>
                     <img src={job.jobThumbnail} className={styles.image}></img>
                   </div>
                   <div className={styles.titleContainer}>
@@ -159,6 +158,12 @@ const ProfessionalExperienceList = () => {
             </div>
           </div>
         ))}
+
+        <Link href="/PDFs/Samuel Imlig Resume.pdf#zoom=80" target={"_blank"}  className={styles.fullResume}>
+          View Full Resume
+          <FontAwesomeIcon icon={faSquareArrowUpRight} className="pl-2" size="lg"/>
+        </Link>
+
       </div>
     </>
   );

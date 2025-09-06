@@ -55,47 +55,8 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
           >
             Experience
           </button>
-          {width && width > 450 && (
-            <>
-              <Link href="/PDFs/Samuel Imlig Resume.pdf#zoom=80" target={"_blank"} className={styles.links}>
-                Resume
-              </Link>
-              <Link href="https://www.linkedin.com/in/samuel-imlig/" target={"_blank"} className={styles.links}>
-                <FontAwesomeIcon icon={faLinkedin} className={"fa-lg"} href={"https://www.linkedin.com/in/samuel-imlig/"} />
-              </Link>
-            </>
-          )}
-          {width && width <= 450 && (
-            <button className={styles.links} onClick={() => setHamburgerListActive(!hamburgerListActive)}>
-              <FontAwesomeIcon icon={faBars} className={"fa-lg"} />
-            </button>
-          )}
         </div>
       </div>
-      {hamburgerListActive && width && width < 450 && (
-        <div className={styles.hamburgerContainer}>
-          <div className="flex">
-            <Link
-              href="/PDFs/Samuel Imlig Resume.pdf"
-              target={"_blank"}
-              className={
-                styles.hamburgerLinks + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
-              }
-            >
-              Resume
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/samuel-imlig/"
-              target={"_blank"}
-              className={
-                styles.hamburgerLinks + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
-              }
-            >
-              <FontAwesomeIcon icon={faLinkedin} className={"fa-lg"} href={"https://www.linkedin.com/in/samuel-imlig/"} />
-            </Link>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };

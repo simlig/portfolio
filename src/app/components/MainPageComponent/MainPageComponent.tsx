@@ -6,6 +6,7 @@ import ProfessionalExperienceList from "../ProfessionalExperienceList/Profession
 import ProjectGrid from "../ProjectGrid/ProjectGrid";
 import SlowRevealList from "../SlowRevealList/SlowRevealList";
 import styles from "../MainPageComponent/MainPageComponent.module.css";
+import Footer from "../Footer/Footer";
 
 const MainPageComponent = () => {
   const landingPageAnchor = useRef<HTMLDivElement | null>(null);
@@ -40,9 +41,7 @@ const MainPageComponent = () => {
         </div>
         <ProfessionalExperienceList></ProfessionalExperienceList>
       </div>
-      <div className={styles.copyright}>
-        © 2025 Samuel K. Imlig. All rights reserved. All trademarks, logos, and software referenced are the property of their respective owners.
-      </div>
+      <Footer></Footer>
     </div>
   );
 };
