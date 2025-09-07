@@ -26,7 +26,7 @@ const jobs: Job[] = [
       "Developed a full-stack application that provided content managers with the ability to query, modify and perform metrics on content and users across 800,000 unique entries",
       "Led client meetings and provided technical insight for new development and issues detected"
     ],
-    softwareUsed: ["React", "Java", "Python", "AWS"],
+    softwareUsed: ["Python", "Java", "TypeScript", "NextJS", "Tailwind", "AWS"],
   },
   {
     jobTitle: "Computer Support Specialist",
