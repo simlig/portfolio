@@ -3,7 +3,6 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../Footer/Footer.module.css";
 
-
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -17,12 +16,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon icon={faLinkedin} className="fa-2x" />
           </a>
-          <a
-            href="https://github.com/simlig/portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.links}
-          >
+          <a href="https://github.com/simlig/portfolio" target="_blank" rel="noopener noreferrer" className={styles.links}>
             <FontAwesomeIcon icon={faGithub} className="fa-2x" />
           </a>
         </div>
@@ -30,6 +24,7 @@ const Footer = () => {
         <div className={styles.copyright}>
           © 2025 Samuel K. Imlig. All rights reserved. All trademarks, logos, and software referenced are the property of
           their respective owners.
+          <div className="lg:text-center pt-2">Next.js · TypeScript · Tailwind CSS</div>
         </div>
       </div>
     </footer>

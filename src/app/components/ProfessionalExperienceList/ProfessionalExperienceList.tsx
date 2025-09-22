@@ -37,8 +37,9 @@ const jobs: Job[] = [
     jobEndDate: "2023",
     jobThumbnail: "/portfolio/Thumbnails/GeorgeFoxLogo.jpg",
     jobDescription: [
-      "Diagnosed and resolved software/hardware issues on Windows and macOS computers to ensure full functionality, customer satisfaction and adherence to industry standards.",
-      "Enhanced efficiency by implementing automated file transfers through PowerShell scripts, reducing required employee oversight.",
+      "Diagnosed and resolved software/hardware issues on Windows and macOS computers to ensure full functionality, customer satisfaction and adherence to industry standards either in person, over the phone or through a remote connection",
+      "Resolved campus-wide CPU throttling issues on Windows 11 machines by identifying the causes and implementing both manual and automatic solutions",
+      "Enhanced efficiency by implementing automated file transfers through PowerShell scripts, reducing required employee oversight"
     ],
     softwareUsed: ["Powershell", "Python"],
   },
@@ -51,8 +52,9 @@ const jobs: Job[] = [
     jobEndDate: "2022",
     jobThumbnail: "/portfolio/Thumbnails/AAP.png",
     jobDescription: [
-      "Developed a mobile application for iOS and Android that utilized the REST paradigm to interact with a Paradox database.",
-      "Reduced pen and paper tasks by 90%, which significantly increased employee productivity and reduced redundancy.",
+      "Developed a cross-platform mobile application (Delphi, Paradox) for iOS and Android that enabled service employees to query customer data, navigate to residences and record duties performed via a centralized backend system",
+      "Led Amazon Appstore deployment, managing production builds, metadata setup and release cycles",
+      "Eliminated redundant pen and paper tasks, leading to a substantial increase in employee productivity"
     ],
     softwareUsed: ["Delphi", "Pascal", "ParadoxDB"],
   },
