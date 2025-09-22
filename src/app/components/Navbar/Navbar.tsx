@@ -1,6 +1,6 @@
 import { useWindowWidth } from "@/app/hooks/WidthCalculator";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React, { Ref, useState } from "react";
@@ -55,6 +55,15 @@ const Navbar: React.FC<NavbarTypes> = ({ landingPageAnchor, projectGridAnchor, p
           >
             Experience
           </button>
+          <Link href="/PDFs/Samuel Imlig Resume.pdf" target={"_blank"} className={styles.fullResume}>
+            <button
+              className={
+                styles.portfolioAnchors + (width && width < 360 ? " px-2" : "") + (width && width >= 360 ? " px-4" : "")
+              }
+            >
+              <FontAwesomeIcon icon={faAddressCard} size="lg" />
+            </button>
+          </Link>
         </div>
       </div>
     </nav>
