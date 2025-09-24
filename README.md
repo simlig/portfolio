@@ -1,1 +1,1 @@
-# A website depicting some of my professional and personal projects
+# A website depicting some of Samuel Imlig's professional and personal projects
