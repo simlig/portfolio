@@ -68,13 +68,20 @@ const ProjectGrid = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
+  const preloadImages = async () => {
+    for (const project of projects) {
+      for (const image of project.slides) {
+        await new Promise((resolve) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = resolve;
+          img.src = image;
+        });
+      }
+    }
+  };
   useEffect(() => {
-    projects.forEach((project) => {
-      project.slides.forEach((image) => {
-        const img = new Image();
-        img.src = image;
-      });
-    });
+    preloadImages();
   }, []);
 
   useEffect(() => {
