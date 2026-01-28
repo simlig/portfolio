@@ -17,7 +17,7 @@
 }
 
 .imageContainer {
-  @apply self-start w-24 h-24 rounded-[25%] overflow-hidden bg-white will-change-transform;
+  @apply self-start w-24 h-24 overflow-hidden bg-white will-change-transform;
 }
 
 .image {
