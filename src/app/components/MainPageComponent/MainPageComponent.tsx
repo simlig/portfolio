@@ -35,8 +35,9 @@ const MainPageComponent = () => {
         </div>
         <ProjectGrid></ProjectGrid>
       </div>
-      <div className={styles.fullScreenView + " bg-slate-900"}>
+      <div className={styles.fullScreenView + " bg-[#141e38]"}>
         <div ref={professionalExperienceListAnchor} className={styles.headers}>
+          Experience
         </div>
         <ProfessionalExperienceList></ProfessionalExperienceList>
       </div>
