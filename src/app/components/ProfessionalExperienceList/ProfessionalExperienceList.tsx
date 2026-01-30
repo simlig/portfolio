@@ -16,17 +16,33 @@ const jobs: Job[] = [
     jobLocation: "Remote",
     jobLink: "https://www.saic.com/",
     jobCompany: "SAIC",
-    jobStartDate: "2023",
+    jobStartDate: "2024",
     jobEndDate: "Present",
     jobThumbnail: `/portfolio/Thumbnails/SAICLogo.jpg`,
     jobThumbnailStyling: "bg-blue-700",
     jobDescription: [
-      "Provided full-stack development and support for an application with over 10,000 daily users",
-      "Worked as a three-person team to perform a platform upgrade that involved package update and replacement, a complete frontend rewrite and regression testing to ensure full-functionality, performance and enhanced security",
-      "Developed a full-stack application that provided content managers with the ability to query, modify and perform metrics on content and users across 800,000 unique entries",
-      "Led client meetings and provided technical insight for new development and issues detected"
+      "Collaborated within a three-person team to execute a major platform upgrade, which involved extensive package and dependency replacement, a complete frontend migration and testing across a codebase of over 195,000 lines of code.",
+      "Built a multi‑cloud SIEM environment using Terraform, Terragrunt, and Ansible, enabling automated deployment and configuration of log ingestion pipelines across AWS, Azure, GCP, and OCI.",
+      "Led client meetings and provided progress reports and technical guidance for issue resolution, system functionality, and upcoming development efforts.",
+      "Identified, investigated, and resolved security vulnerabilities across both the infrastructure and application codebase, contributing to overall system hardening and improved security posture."
     ],
-    softwareUsed: ["Python", "Java", "TypeScript", "NextJS", "Tailwind", "AWS"],
+    softwareUsed: ["Java", "Spring", "Thymeleaf", "Terragrunt", "Ansible", "Jenkins"],
+  },
+  {
+    jobTitle: "SWE Associate",
+    jobLocation: "Remote",
+    jobLink: "https://www.saic.com/",
+    jobCompany: "SAIC",
+    jobStartDate: "2023",
+    jobEndDate: "2024",
+    jobThumbnail: `/portfolio/Thumbnails/SAICLogo.jpg`,
+    jobThumbnailStyling: "bg-blue-700",
+    jobDescription: [
+      "Developed, designed and maintained an AWS based full-stack application that allowed clients to query, update and analyze content and user data across 800,000+ unique entries.",
+      "Migrated the platform from Amazon Linux 2 to Amazon Linux 2023 to ensure full compliance with security protocols and best practices.",
+      "Guided teammates through full‑stack development principles and hands‑on implementation.",
+    ],
+    softwareUsed: ["Java", "SpringBoot", "NextJS", "Tailwind", "AWS"],
   },
   {
     jobTitle: "Computer Support Specialist",
@@ -99,9 +115,13 @@ const ProfessionalExperienceList = () => {
             <div className={styles.outerJobContainer}>
               <div className={styles.innerJobContainer}>
                 <div className={"flex"}>
-                  <div className={styles.imageContainer}>
-                    <img src={job.jobThumbnail} className={styles.image}></img>
-                  </div>
+                   {width && width >= 400 && (
+                      <>
+                      <div className={styles.imageContainer}>
+                        <img src={job.jobThumbnail} className={styles.image}></img>
+                      </div>
+                      </>
+                   )}
                   <div className={styles.titleContainer}>
                     {width && width >= 400 && (
                       <>
@@ -119,36 +139,47 @@ const ProfessionalExperienceList = () => {
                   <>
                     <div className={styles.flexTextLeft + " mt-4"}>
                       <div className={"flex"}>
-                        <FontAwesomeIcon className={styles.dynamicIcons + " fa-sm"} icon={faUser} />
-                        <div className={styles.jobTitleSmall}>{job.jobTitle}</div>
+                        {/* <FontAwesomeIcon className={styles.dynamicIcons + " fa-sm"} icon={faUser} /> */}
+                        <div className={styles.jobTitleSmall}>
+                          {job.jobTitle}
+                          <a href={job.jobLink} className="text-green-400 hover: cursor">{" @ " + job.jobCompany}</a>
+                        </div>
                       </div>
                     </div>
-                    <div className={styles.flexTextLeft}>
-                      <a className={styles.flexTextLeft} href={job.jobLink} target={"_blank"}>
-                        <FontAwesomeIcon className={styles.dynamicIcons + " fa-sm"} icon={faArrowUpRightFromSquare} />
-                        <div className={styles.companySmall}>{job.jobCompany}</div>
-                      </a>
+                  <div className={styles.flexTextLeft + " mt-2"}>
+                    <div className={"flex font-sans"}>
+                      <div className={styles.staticIconInformation + " font-thin"}>{job.jobStartDate}</div>
+                      <FontAwesomeIcon icon={faMinus} className={styles.minusIcon} />
+                      <div className={styles.staticIconInformation + " font-thin"}>{job.jobEndDate}</div>
                     </div>
+                  </div>
                   </>
                 )}
-                <div className={styles.flexTextLeft + `${width && width >= 400 ? " mt-4" : ""}`}>
+                {width && width >= 400 && (
+                <div className={styles.flexTextLeft + " mt-4"}>
                   <div className={"flex"}>
-                    <FontAwesomeIcon className={styles.timeLine + " fa-sm"} icon={faTimeline} />
+                    <FontAwesomeIcon className={styles.timeLine + " fa-sm font-thin font-sans"} icon={faTimeline} />
                     <div className={styles.staticIconInformation}>{job.jobStartDate}</div>
                     <FontAwesomeIcon icon={faMinus} className={styles.minusIcon} />
                     <div className={styles.staticIconInformation}>{job.jobEndDate}</div>
                   </div>
                 </div>
-                <div className={styles.flexTextLeft}>
-                  <FontAwesomeIcon className={styles.locationIcon + " fa-sm"} icon={faLocationDot} />
-                  <div className={styles.staticIconInformation}>{job.jobLocation}</div>
-                </div>
+                )}
 
-                <ul className={styles.jobDescriptionList}>
+                <div className={styles.jobDescriptionList}>
                   {job.jobDescription.map((jobPoint, index) => (
-                    <li key={index}>{jobPoint}</li>
+                  <div className="flex mb-2" key={index}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="mt-[.20rem] w-4 h-4 stroke-green-400 stroke-[2px] fill-none shrink-0"
+                    >
+                      <path d="M8 6l10 6-10 6z" strokeLinejoin="round" />
+                    </svg>
+                    <div className="ml-4 text-[1.05rem] font-thin font-sans text-gray-300">{jobPoint}</div>
+                  </div>
                   ))}
-                </ul>
+                </div>
                 <div className={"flex flex-wrap"}>
                   {job.softwareUsed.map((software) => (
                     <div key={software} className={styles.softwareContainer}>

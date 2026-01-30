@@ -28,7 +28,7 @@ const Footer = () => {
         <div className={styles.copyright}>
           © 2025 Samuel K. Imlig. All rights reserved. All trademarks, logos, and software referenced are the property of
           their respective owners.
-          <div className="lg:text-center pt-2">Next.js · TypeScript · Tailwind CSS</div>
+          <div className="text-center pt-2">Next.js · TypeScript · Tailwind CSS</div>
         </div>
       </div>
     </footer>
