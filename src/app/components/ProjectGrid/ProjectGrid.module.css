@@ -5,7 +5,7 @@
 }
 
 .individualProjectContainer {
-    @apply flex flex-col items-center my-2 lg:my-0 bg-slate-900 border hover:border-slate-700 hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4;
+    @apply flex flex-col items-center min-w-full my-2 lg:my-0 bg-slate-900 border sm:hover:border-slate-700 sm:hover:scale-105 transition-transform duration-300 border-slate-900 rounded-lg p-4;
 }
 
 .image {
@@ -13,11 +13,11 @@
 }
 
 .projectTitle {
-    @apply text-center text-lg font-semibold;
+    @apply text-center font-sans text-xl font-semibold;
 }
 
 .projectDescription {
-    @apply text-center text-gray-500 text-sm md:text-base;
+    @apply text-left text-[1.05rem] font-thin text-gray-300 font-sans;
 }
 
 .modalContainer {

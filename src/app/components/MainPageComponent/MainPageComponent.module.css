@@ -13,7 +13,15 @@
 }
 
 .headers {
-  @apply font-bold text-4xl sm:text-5xl mb-12 sm:mb-16 text-center;
+  @apply font-semibold font-sans text-3xl sm:text-5xl sm:mb-8 text-left place-self-start pl-8 sm:pl-0 sm:place-self-center sm:text-center;
+}
+
+.headerDivider {
+  @apply h-px  ml-8 mt-2 sm:mt-12 sm:mb-16 mr-8 flex-1 bg-gray-600;
+}
+
+.headerContainer {
+  @apply justify-self-start w-full max-w-7xl sm:mx-auto sm:p-6 font-thin;
 }
 
 .landingPageTransition {

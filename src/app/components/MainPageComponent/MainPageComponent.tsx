@@ -29,16 +29,33 @@ const MainPageComponent = () => {
         </div>
       </div>
       <div className={styles.landingPageTransition} />
-      <div className={styles.fullScreenView + " bg-[#141e38]"}>
-        <div ref={projectGridAnchor} className={styles.headers}>
-          Projects
+      <div className={styles.fullScreenView + " bg-slate-900 lg:bg-[#141e38]"}>
+        <div className={styles.headerContainer}>
+          <div className="flex items-center">
+            <div ref={projectGridAnchor} className={styles.headers}>
+                  Projects
+                </div>
+            <div className={styles.headerDivider}></div>
+          </div>
         </div>
         <ProjectGrid></ProjectGrid>
       </div>
-      <div className={styles.fullScreenView + " bg-[#141e38]"}>
-        <div ref={professionalExperienceListAnchor} className={styles.headers}>
+      <div className={styles.fullScreenView + " bg-slate-900 lg:bg-[#141e38]"}>
+        <div className={styles.headerContainer}>
+          <div className="flex items-center">
+            <div ref={professionalExperienceListAnchor} className={styles.headers}>
+                  Experience
+                </div>
+            <div className={styles.headerDivider}></div>
+          </div>
+        </div>
+
+        {/* <div ref={professionalExperienceListAnchor} className={styles.headers}>
           Experience
         </div>
+        <div className={"px-4 py-[.10rem] w-full bg-white"}>
+
+        </div> */}
         <ProfessionalExperienceList></ProfessionalExperienceList>
       </div>
       <Footer></Footer>

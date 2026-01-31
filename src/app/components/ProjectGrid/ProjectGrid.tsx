@@ -110,8 +110,8 @@ const ProjectGrid = () => {
     <>
       <div className={styles.mainProjectContainer}>
         {projects.map((project, index) => (
-          <div key={index}>
-            <button className={"hover:cursor-pointer"} onClick={() => projectClicked(project)}>
+          <div key={index}  className="w-full">
+            <button className={"hover:cursor-pointer w-full"} onClick={() => projectClicked(project)}>
               <div className={styles.individualProjectContainer}>
                 <div>
                   {project.title.includes("Pandemic") && (
@@ -120,7 +120,7 @@ const ProjectGrid = () => {
                     </div>
                   )}
                   {!project.title.includes("Pandemic") && (
-                    <img src={project.imageUrl} alt={project.title} className={styles.image} />
+                      <img src={project.imageUrl} alt={project.title} className={styles.image} />
                   )}
                 </div>
                 <p className={styles.projectTitle}>{project.title}</p>
