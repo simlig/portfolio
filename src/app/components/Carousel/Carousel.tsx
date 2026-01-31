@@ -117,7 +117,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           <img
             src={slides[currentSlide]}
             alt={`Slide ${currentSlide}`}
-            className={`transform transition-transform duration-500 ease-in-out max-w-full max-h-full ${
+            className={`${styles.expandedImage} ${
               isVisible ? "scale-100" : "scale-1"
             }`}
             onTouchStart={handleTouchStart}

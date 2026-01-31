@@ -69,7 +69,7 @@
 }
 
 .minusIcon {
-    @apply px-2 align-middle self-center text-[#cacaca] opacity-90;
+    @apply px-2 align-middle self-center text-[#cacaca] font-sans;
 }
 
 .locationIcon {

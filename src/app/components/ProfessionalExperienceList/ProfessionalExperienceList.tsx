@@ -158,7 +158,6 @@ const ProfessionalExperienceList = () => {
                 {width && width >= 400 && (
                 <div className={styles.flexTextLeft + " mt-4"}>
                   <div className={"flex"}>
-                    <FontAwesomeIcon className={styles.timeLine + " fa-sm font-thin font-sans"} icon={faTimeline} />
                     <div className={styles.staticIconInformation}>{job.jobStartDate}</div>
                     <FontAwesomeIcon icon={faMinus} className={styles.minusIcon} />
                     <div className={styles.staticIconInformation}>{job.jobEndDate}</div>
