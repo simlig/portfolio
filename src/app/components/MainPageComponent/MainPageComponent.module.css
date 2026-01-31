@@ -13,7 +13,7 @@
 }
 
 .headers {
-  @apply font-semibold font-sans text-3xl sm:text-5xl sm:mb-8 text-left place-self-start pl-8 sm:pl-0 sm:place-self-center sm:text-center;
+  @apply font-semibold text-gray-200 font-sans text-3xl sm:text-5xl sm:mb-8 text-left place-self-start pl-8 sm:pl-0 sm:place-self-center sm:text-center;
 }
 
 .headerDivider {

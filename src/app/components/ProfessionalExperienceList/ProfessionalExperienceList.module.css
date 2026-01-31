@@ -37,7 +37,7 @@
 }
 
 .company {
-  @apply pl-8 text-[1rem] sm:text-base;
+  @apply pl-8 text-[1rem] sm:text-base text-green-400 font-sans font-semibold;
 }
 
 .externalLinkArrow {

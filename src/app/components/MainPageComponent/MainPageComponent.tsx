@@ -31,10 +31,10 @@ const MainPageComponent = () => {
       <div className={styles.landingPageTransition} />
       <div className={styles.fullScreenView + " bg-slate-900 lg:bg-[#141e38]"}>
         <div className={styles.headerContainer}>
-          <div className="flex items-center">
+          <div className="flex items-center mb-8 sm:mb-0">
             <div ref={projectGridAnchor} className={styles.headers}>
-                  Projects
-                </div>
+                Projects
+            </div>
             <div className={styles.headerDivider}></div>
           </div>
         </div>
