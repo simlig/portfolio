@@ -14,6 +14,24 @@ import Pandemic2020Logo from "../Pandemic2020Logo/Pandemic2020Logo";
 
 const projects: Project[] = [
   {
+    imageUrl: "/portfolio/MM/LoadingScreen.jpg",
+    title: "Minimalist Music",
+    description: "An Android mobile application developed in Kotlin to provide a sleek, modern and minimalistic music experience",
+    link: "https://github.com/simlig/MinimalistMusic",
+    contributions: ["Mobile Development", "Native Android", "UI/UX Design"],
+    slides: [
+      "/portfolio/MM/RecentMedia.jpg",
+      "/portfolio/MM/PlayingSong.jpg",
+      "/portfolio/MM/CreateNewPlaylist.jpg",
+      "/portfolio/MM/PlaylistCreatedMessage.jpg",
+      "/portfolio/MM/NewlyCreatedPlaylist.jpg",
+      "/portfolio/MM/Search.jpg",
+      "/portfolio/MM/AddSongToPlaylistSnackbar.jpg",
+      "/portfolio/MM/DropDownMenu.jpg",
+    ],
+    blank: true,
+  },
+  {
     imageUrl: "/portfolio/VineTech/RoverInVineyard.jpg",
     title: "VineTech",
     description: "Autonomous Rover that uses computer vision and machine learning to predict vineyard yields",
